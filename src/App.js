@@ -1,20 +1,12 @@
-// src/App.js
 import React from 'react';
-import { SafeAreaView, StyleSheet } from 'react-native';
-import MovieListScreen from './screen/Camera';
+import { Provider } from 'react-redux';
+import store from './redux/store';
+import Router from './route/Route';
 
-const App = () => {
-  return (
-    <SafeAreaView style={styles.container}>
-      <MovieListScreen />
-    </SafeAreaView>
-  );
-};
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
+const App = () => (
+  <Provider store={store}>
+    <Router />
+  </Provider>
+);
 
 export default App;
